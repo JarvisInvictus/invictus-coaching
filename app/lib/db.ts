@@ -1,7 +1,8 @@
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from "fs";
 import { join } from "path";
 
-const DB_PATH = join(process.cwd(), "data", "clients.json");
+const DB_DIR = "/tmp/data";
+const DB_PATH = join(DB_DIR, "clients.json");
 
 export interface WeekEntry {
   date: string;

@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #0a0b14;
+  --tiffany: #0abab5;
+  --glass-bg: rgba(255,255,255,0.04);
+  --glass-border: rgba(255,255,255,0.08);
+  --text: rgba(255,255,255,0.85);
+  --text-muted: rgba(255,255,255,0.45);
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, sans-serif;
+}

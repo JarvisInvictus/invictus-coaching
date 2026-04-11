@@ -3,7 +3,8 @@ import { getAllClients, createClient } from "@/app/lib/db";
 
 export async function GET() {
   try {
-    return NextResponse.json(getAllClients());
+    const clients = getAllClients();
+    return NextResponse.json(clients);
   } catch (e) {
     return NextResponse.json({ error: String(e) }, { status: 500 });
   }

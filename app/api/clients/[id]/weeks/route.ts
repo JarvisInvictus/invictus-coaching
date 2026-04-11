@@ -5,7 +5,8 @@ import { WeekEntry } from "@/app/lib/db";
 export async function GET(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   try {
     const { id } = await params;
-    return NextResponse.json(getWeeks(id));
+    const weeks = getWeeks(id);
+    return NextResponse.json(weeks);
   } catch (e) {
     return NextResponse.json({ error: String(e) }, { status: 500 });
   }
@@ -34,7 +35,8 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ id:
       pedDose: body.pedDose ?? null,
       notes: body.notes ?? null,
     };
-    return NextResponse.json(addWeek(id, week), { status: 201 });
+    const added = addWeek(id, week);
+    return NextResponse.json(added, { status: 201 });
   } catch (e) {
     return NextResponse.json({ error: String(e) }, { status: 500 });
   }
